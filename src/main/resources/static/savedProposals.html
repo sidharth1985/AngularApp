@@ -1,0 +1,41 @@
+<br />
+<br />
+<br />
+<div class="customers view indent">
+	<div class="container">
+		<header>
+			<h3>
+				<span class="glyphicon glyphicon-user"></span>Saved Proposals
+			</h3>
+		</header>
+		
+		<div class="row">
+			<table
+				class="table table-hover table-striped table-condensed table-bordered ordersTable">
+				<thead>
+					<th>Proposal ID</th>
+					<th>Proposal Name</th>
+				</thead>
+				<tbody>
+					<tr data-ng-show="savedProposals.length > 0"
+						ng-repeat="proposal in savedProposals" class=".repeat-animation">
+						<td>{{proposal.proposalId}}</td>
+						<td>{{proposal.proposalName}}</td>
+					</tr>
+					<tr data-ng-hide="savedProposals.length > 0" class="error">
+						<td colspan="5">
+							<div class="text-center">
+								<strong>No proposal saved</strong>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		<br />
+
+
+	</div>
+</div>

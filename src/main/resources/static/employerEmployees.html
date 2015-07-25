@@ -1,0 +1,30 @@
+	<h5>
+				<span class="glyphicon glyphicon-user"></span> Employees
+			</h5>
+<div>
+		<table
+				class="table table-hover table-striped table-condensed table-bordered ordersTable">
+				<thead>
+					<th>FullName</th>
+					<th>SSN</th>
+					<th>DOB</th>
+					<th>Company Name</th>
+				</thead>
+				<tbody>
+					<tr data-ng-show="employees.length > 0"
+						ng-repeat="employee in employees">
+						<td>{{employee.fullName}}</td>
+						<td>{{employee.ssn}}</td>
+						<td>{{employee.dob  | date:'yyyy-MM-dd' }}</td>
+						<td>{{employee.employerName}}</td>
+					</tr>
+					<tr data-ng-hide="employees.length > 0" class="error">
+						<td colspan="5">
+							<div class="text-center">
+								<strong>No Employees Found</strong>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+</div>

@@ -1,0 +1,81 @@
+<br />
+<br />
+<br />
+<div class="customers view indent">
+	<div class="container">
+		<header>
+			<h3>
+				<span class="glyphicon glyphicon-user"></span> Employers
+			</h3>
+		</header>
+		<div class="row">
+			<div class="col-md-10">
+				<div class="navbar">
+					<ul class="nav navbar-nav">
+
+						<li class="toolbaritem"><a ng-click="enableAddEmployer()">
+								<span class="glyphicon glyphicon-plus"></span> Add Employer
+						</a></li>
+					</ul>
+					<form class="navbar-form navbar-right">
+						<div class="form-group">
+							<label class="navbarText col-sm-2">Filter:</label>
+							<div class="col-sm-10">
+								<input type="text" ng-model="searchByName" /><br />
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+		<div class="row" ng-show="addEmployer">
+			<div class="navbar">
+				Employer Name : <input type="text" ng-model="newEmployer.name" />
+				Employer City : <input type="text" ng-model="newEmployer.city"/> 
+				<input type="button" ng-click="addEmployerFunction()" value="Add Employer" />
+			</div>
+		</div>
+
+		<div class="row" ng-init="init()">
+			<table
+				class="table table-hover table-striped table-condensed table-bordered ordersTable">
+				<thead>
+					<th>Name</th>
+					<th>City</th>
+					<th>Action</th>
+				</thead>
+				<tbody>
+					<tr data-ng-show="employers.length > 0"
+						ng-repeat="employer in employers |  filter:searchByName | orderBy : 'name'" class=".repeat-animation">
+						<td ng-hide="editTableData[employer.id]">{{employer.name}}</td>
+						<td ng-show="editTableData[employer.id]"><input type="text"
+							ng-model="employer.name" /></td>
+						<td ng-hide="editTableData[employer.id]">{{employer.city}}</td>
+						<td ng-show="editTableData[employer.id]"><input type="text"
+							ng-model="employer.city" /></td>
+						<td><input type="button" value="edit"
+							ng-click="editEmployer(employer.id)"
+							ng-hide="editTableData[employer.id]" /> <input type="button"
+							value="update" ng-click="editEmployer(employer.id)"
+							ng-show="editTableData[employer.id]" /> <input type="button"
+							value="delete" ng-click="deleteEmployer(employer)" /> <a
+							ng-click="getEmployees(employer.id)">View Employees</a></td>
+					</tr>
+					<tr data-ng-hide="employers.length > 0" class="error">
+						<td colspan="5">
+							<div class="text-center">
+								<strong>No Employer Found</strong>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		<br />
+<div ui-view></div>
+
+	</div>
+</div>

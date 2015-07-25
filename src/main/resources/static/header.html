@@ -1,0 +1,31 @@
+
+ <header class="navbar navbar-inner navbar-fixed-top">
+        <nav class="container">
+            <div class="navbar-header">
+              <!--   <button type="button" class="navbar-toggle" ng-click="vm.isCollapsed = !vm.isCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> --> 
+                <a class="navbar-brand" ui-sref="employers">
+                    <img src="css/images/people.png" alt="logo">
+                    <span class="appTitle">Employer Management System</span>
+                </a>
+            </div>
+            <div class="nav-container">
+
+                <!-- With menu-highlighter directive -->
+                <ul class="nav navbar-nav nav-pills navBarPadding"
+                    menu-highlighter highlight-class-name="active">
+                    <li><a ui-sref="employers">Employers</a></li>
+                    <li><a ui-sref="employees">Employees</a></li>
+                     <li><a ui-sref="proposals">Proposals</a></li>
+                    <li><a ui-sref="about">About</a></li>
+                 
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+	

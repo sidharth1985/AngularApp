@@ -1,0 +1,41 @@
+<br />
+<br />
+<br />
+<div class="customers view indent">
+	<div class="container">
+		<header>
+			<h3>
+				<span class="glyphicon glyphicon-user"></span>Shared Proposals
+			</h3>
+		</header>
+		
+		<div class="row">
+			<table
+				class="table table-hover table-striped table-condensed table-bordered ordersTable">
+				<thead>
+					<th>Proposal ID</th>
+					<th>Proposal Name</th>
+				</thead>
+				<tbody>
+					<tr data-ng-show="sharedProposals.length > 0"
+						ng-repeat="proposal in sharedProposals" class=".repeat-animation">
+						<td>{{proposal.proposalId}}</td>
+						<td>{{proposal.proposalName}}</td>
+					</tr>
+					<tr data-ng-hide="sharedProposals.length > 0" class="error">
+						<td colspan="5">
+							<div class="text-center">
+								<strong>No proposal shared with employees</strong>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		<br />
+
+
+	</div>
+</div>

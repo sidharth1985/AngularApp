@@ -1,0 +1,15 @@
+<br><br><br><br><br>
+
+
+   <tabset>
+				<tab ng-repeat="tab in tabs" active="tab.active"
+            		heading="{{tab.heading}}"
+            		select="go(tab.route)" justified=true> 
+					<div ui-view></div>
+        		</tab>
+   </tabset>
+
+		
+		
+		
+	
